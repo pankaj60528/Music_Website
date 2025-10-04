@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@keyframes move-twink-back {  /* i am using this because for a cosmic background for my webpage*/
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display: block;
+  z-index: -2;
+}
+
+.stars {
+  background:#000 url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+}
+
+.twinkling {
+  background:transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  animation:move-twink-back 200s linear infinite;
+  z-index: -1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgba(10, 10, 30, 0.7);
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(20, 20, 50, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    color: #6ee7ff;
+    text-shadow: 0 0 10px rgba(110, 231, 255, 0.5);
+}
+
+.logo i {
+    color: #6ee7ff;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav a:hover, nav a.active {
+    color: #6ee7ff;
+    text-shadow: 0 0 10px rgba(110, 231, 255, 0.5);
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    background: rgba(110, 231, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.user:hover {
+    background: rgba(110, 231, 255, 0.4);
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 280px;
+    background: rgba(15, 15, 40, 0.7);
+    padding: 2rem;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar h3 {
+    margin: 2rem 0 1rem;
+    font-size: 1rem;
+    color: #6ee7ff;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.8rem 0;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar li:hover {
+    color: #6ee7ff;
+    transform: translateX(5px);
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.banner {
+    background: linear-gradient(135deg, rgba(110, 231, 255, 0.2), rgba(138, 43, 226, 0.2));
+    padding: 3rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    color: #fff;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #6ee7ff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #6ee7ff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(30, 30, 60, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(40, 40, 80, 0.7);
+}
+
+.album-art {
+    position: relative;
+    margin-bottom: 1.2rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.album-art img {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.card:hover .hover-effect {
+    opacity: 1;
+}
+
+.hover-effect i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin-bottom: 0.8rem;
+}
+
+.stars-rating {
+    color: #ffcc00;
+    font-size: 0.9rem;
+}
+
+/* Player */
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(20, 20, 50, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    width: 25%;
+}
+
+.song-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.song-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.song-info p {
+    font-size: 0.8rem;
+    color: #b3b3b3;
+}
+
+.song-info i {
+    margin-left: auto;
+    cursor: pointer;
+    color: #6ee7ff;
+    transition: all 0.3s;
+}
+
+.song-info i:hover {
+    transform: scale(1.1);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.progress-container {
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.progress-bar {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    margin-bottom: 0.3rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #6ee7ff, #8a2be2);
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #b3b3b3;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.buttons button:hover {
+    color: #6ee7ff;
+    background: rgba(110, 231, 255, 0.1);
+}
+
+.buttons #play {
+    background: linear-gradient(135deg, #6ee7ff, #8a2be2);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.buttons #play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(110, 231, 255, 0.5);
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 25%;
+    justify-content: flex-end;
+}
+
+.volume i {
+    color: #b3b3b3;
+    font-size: 1rem;
+}
+
+.volume input {
+    width: 120px;
+    -webkit-appearance: none;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+.volume input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #6ee7ff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(110, 231, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        width: 80px;
+        padding: 1rem;
+    }
+    
+    .sidebar h3 span, 
+    .sidebar li span {
+        display: none;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
+    
+    .banner {
+        padding: 2rem 1rem;
+    }
+    
+    .song-info {
+        width: 40%;
+    }
+    
+    .controls {
+        width: 60%;
+    }
+    
+    .volume {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .player {
+        padding: 0.8rem;
+    }
+    
+    .buttons {
+        gap: 1rem;
+    }
+}
